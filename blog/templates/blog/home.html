@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                <img src="{{post.Author.profile.image.url}}" alt="profile pic" class="prof_pic">
+                {% if user.is_authenticated and post.Author == user%} <!-- let user be abe to go to profile by clicking username on their own post-->
+                    <a href="/profile">{{post.Author}} </a>
+                {%else%}
+                     <a class="mr-2">{{ post.Author }}</a>
+                {%endif%}
+                <small class="text-muted">{{ post.Date_Posted| date:"d F, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{%url 'post-detail' post.id%}">{{ post.Title}}</a></h2>
+            <p class="article-content">{{ post.Content}}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

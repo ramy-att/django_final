@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+<!-- Take from register -->
+{% block content %}
+        <div>
+            <form method="POST">
+                {%csrf_token%}
+                <fieldset>
+                    <legend>Blog Post</legend>
+                    {{form.as_p}}
+                </fieldset>
+                <div>
+                    <button type="submit">Submit Post</button>
+                </div>
+            </form>
+        </div>
+{% endblock content %}

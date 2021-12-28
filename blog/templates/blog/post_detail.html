@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+{% block content %}
+
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <img src="{{post.Author.profile.image.url}}" alt="profile pic" class="prof_pic">
+                <a class="mr-2">{{ object.Author }}</a>
+                <small class="text-muted">{{ object.Date_Posted| date:"d F, Y" }}</small>
+                {%if object.Author == user%}
+                    <div>
+                        <a href="{%url 'post-delete' object.id %}">Delete</a>
+                        <a href="{%url 'post-update' object.id %}">Update</a>
+                    </div>
+                {% endif%}
+
+            </div>
+            <h2>{{ object.Title}}</h2>
+            <p class="article-content">{{ object.Content}}</p>
+        </div>
+    </article>
+
+{% endblock content %}

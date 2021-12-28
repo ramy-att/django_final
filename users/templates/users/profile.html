@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+{% block content %}
+        <h> Hey there {{ user.username}} !</h> <!-- user: represents current logged in user -->
+        <img src="{{user.profile.image.url}}" alt="profile pic" class="prof_pic">
+        <form method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <fieldset>
+                    <legend>Update your Profile</legend>
+                    {{u_form}}
+                        <br>
+                    {{p_form}}
+                </fieldset>
+                <div>
+                        <br>
+                    <button type="submit">Update Now</button>
+                </div>
+            </form>
+
+
+{% endblock content %}

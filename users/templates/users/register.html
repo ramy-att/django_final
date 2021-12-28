@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+{% block content %}
+
+        <div>
+            <form method="POST">
+                {%csrf_token%}
+                <fieldset>
+                    <legend>Join today</legend>
+                    <p> *Email is optional* </p>
+                    {{form.as_p}}
+                </fieldset>
+                <div>
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+            <div>
+                <hr>
+                <small>Already have an account? <a href="{% url 'login' %}">Sign in </a></small>
+            </div>
+        </div>
+{% endblock content %}

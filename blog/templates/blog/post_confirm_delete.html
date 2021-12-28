@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+<!-- Take from register -->
+{% block content %}
+        <div>
+            <form method="POST">
+                {%csrf_token%}
+                <fieldset>
+                    <legend>Delete Post</legend>
+                    <h>Are you sure you want to delete the post called "{{object.Title}}"?</h>
+                </fieldset>
+                <div>
+                    <button type="submit">Delete Post</button>
+                    <a href="{%url 'post-detail' object.id%}">No! Take me back!</a>
+                </div>
+            </form>
+        </div>
+{% endblock content %}

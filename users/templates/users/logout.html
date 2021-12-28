@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %} <! -- Import from base.html -->
+{% block content %}
+<h> You have been logged out! </h>
+<div>
+    <small>Login again <a href="{% url 'login' %}">here </a></small>
+</div>
+{% endblock content %}
