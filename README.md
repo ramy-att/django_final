@@ -17,12 +17,13 @@ To install Django:
 2-	Install Django in virtual environment 
 3-	In command prompt/terminal type: Django-admin startproject (project name)
 •	This creates a directory with the project name that has all necessary files and directories to get started the django project
-To run development server and view website:
--	In terminal: python manage.py runserver (where manage.py is the main python file in the project that allows the running of the server)
+
 To install pillow:
 -	In terminal open python and type: pip install pillow
+-	
 Files division:
 Main directory ‘django_final’ is the root for ‘blog’, ‘django_final’, ‘media’, and ‘users’
+
 Blog:
 •	Focuses on main part of the blog such as creating, editing and deleting posts
 -	Migrations: database migrations 
