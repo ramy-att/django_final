@@ -7,6 +7,7 @@ from django.views.generic import ListView, DetailView,CreateView, UpdateView, De
 from .models import Post
 
 #Third step for URL
+#views
 
 def home(request):
     'Displays what the user sees on the screen on the home page'
